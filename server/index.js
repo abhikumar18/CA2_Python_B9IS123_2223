@@ -2,6 +2,9 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import mongoose from 'mongoose';
 import cors from 'cors';
+import studentRoutes from './routes/student.js';
+
+app.use('/students', studentRoutes);
 
 const app = express();
 
@@ -14,7 +17,7 @@ app.use(cors());
 
 const CONNECTION_URL = 'mongodb+srv://issume:K3Ayh2vR34Jv62Yj@issume.q7r6fty.mongodb.net/?retryWrites=true&w=majority';
 
-const PORT  = process.env.PORT || 5000;
+const PORT  = process.env.PORT || 5500;
 
 mongoose.connect(CONNECTION_URL, {
     useNewUrlParser:true, useUnifiedTopology:true
