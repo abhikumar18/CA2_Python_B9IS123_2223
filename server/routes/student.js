@@ -1,9 +1,7 @@
 import express from 'express'
-
+import {getStudents} from '../controllers/students.js'
 const router = express.Router();
 
-router.get('/',(req, res)=>{
-    res.send('Student Route');
-});
+router.get('/', getStudents);
 
 export default router;s
