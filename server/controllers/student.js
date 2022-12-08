@@ -1,4 +1,4 @@
-export const getStudents =  async (req, res)=>{
+export const getStudents =  async (req, res)=> {
     try {
         const allStudents = await student.find();
 
@@ -8,7 +8,7 @@ export const getStudents =  async (req, res)=>{
     }
 }
 
-export const createStudent = async (req, res)=>{
+export const createStudent = async (req, res)=> {
     const student = req.body;
 
     const newStudent = new student(student);
