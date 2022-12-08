@@ -2,10 +2,11 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import mongoose from 'mongoose';
 import cors from 'cors';
-import studentRoutes from './routes/student.js'
+import studentRoutes from './routes/student.js';
 
 
 const app = express();
+app.use(cors());
 
 // Routes creation
 app.use('/students',studentRoutes);
@@ -26,7 +27,7 @@ mongoose.connect(CONNECTION_URL,{useNewUrlParser:true,useUnifiedTopology:true
 console.log(`Connection is established and running on port: ${PORT}`))).catch((err)=>console.log(err.message));
 
 
-// mongoose.set('useFindAndModify',false);
+//  mongoose.set('useFindAndModify',false);
 
 
 
