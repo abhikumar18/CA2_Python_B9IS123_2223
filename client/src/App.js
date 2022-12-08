@@ -17,9 +17,9 @@ function App() {
 
         <Grow in>
             <Container>
-              <Grid container justify="space-between" alignItems='strech'>
+              <Grid container justify="space-between" alignItems='stretch'>
                 <Grid item xs={12} sm={7}>
-                  <Student></Student>
+                  <Student/>
                 </Grid>
                 <Grid item xs={12} sm={4}>
                    <AppBar className={classes.appBar} position="static" color='inherit'>
