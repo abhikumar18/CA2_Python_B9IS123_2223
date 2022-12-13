@@ -12,6 +12,7 @@ export default function BasicTextFields() {
       noValidate
       autoComplete="off"
     >
+        <h2>Create student</h2>
       <TextField id="outlined-basic" label="Outlined" variant="outlined" />
       
     </Box>
