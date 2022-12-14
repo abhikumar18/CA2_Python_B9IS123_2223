@@ -8,13 +8,13 @@ import studentRoutes from './routes/student.js';
 const app = express();
 app.use(cors());
 
-// Routes creation
-app.use('/students',studentRoutes);
 
 app.use(bodyParser.json({limit:"20mb",extended:true}));
 app.use(bodyParser.urlencoded({limit:"20mb",extended:true}));
 
-app.use(cors());
+
+// Routes creation
+app.use('/students',studentRoutes);
 
 
 // Mongo DB Connection String
@@ -27,7 +27,7 @@ mongoose.connect(CONNECTION_URL,{useNewUrlParser:true,useUnifiedTopology:true
 console.log(`Connection is established and running on port: ${PORT}`))).catch((err)=>console.log(err.message));
 
 
-//  mongoose.set('useFindAndModify',false);
+//   mongoose.set('useFindAndModify',false);
 
 
 

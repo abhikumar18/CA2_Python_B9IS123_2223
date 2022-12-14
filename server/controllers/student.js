@@ -9,7 +9,7 @@ export const getStudents = async (req,res) =>{
     }catch(error){
         res.status(404).json({ message: error.message})
     }
-}
+} 
 
 
 // Creating students Data
@@ -29,7 +29,7 @@ export const createStudent = async(req,res)=>{
 export const deleteStudent = async(req,res)=>{
     const id = req.params.id;
     try{
-        await (await StudentData.findByIdAndRemove(id)).exec();
+        await StudentData.findByIdAndRemove(id).exec();
         res.send("Succesfully Deleted")
     }catch(error){
         console.log(error);

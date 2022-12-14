@@ -8,4 +8,4 @@ router.post("/",createStudent);
 router.delete("/:id",deleteStudent);
 
 
-export default router;
+export default router; 

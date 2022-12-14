@@ -12,7 +12,7 @@ function App() {
     <div className="App">
       <Container maxWidth="lg">
         <AppBar className={classes.appBar} position="static" color="inherit">
-          <Typography className={classes.heading} variant="h2" align="center">Student Create & Show</Typography>
+          <Typography className={classes.heading} variant="h2" align="center">Student Management System</Typography>
         </AppBar>
 
         <Grow in>
