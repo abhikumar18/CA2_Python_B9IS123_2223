@@ -30,6 +30,8 @@ export default function BasicTable() {
   const classes = useStyles();
 
   return (
+    <>
+    <h2>All Students</h2>
     <TableContainer component={Paper}>
       <Table className={classes.table} aria-label="simple table">
         <TableHead>
@@ -56,6 +58,7 @@ export default function BasicTable() {
         </TableBody>
       </Table>
     </TableContainer>
+    </>
   );
 }
 

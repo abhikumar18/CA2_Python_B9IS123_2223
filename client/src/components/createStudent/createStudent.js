@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
+import axios from 'axios';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -11,12 +13,43 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function BasicTextFields() {
+export default function Create() {
   const classes = useStyles();
 
+  const [student, setStudent] = useState({
+
+    regNo: 0,
+    studentName: '',
+    grade: '',
+    section: ''
+  });
+
+  //This function will save the data from front end to backend
+  const createStudent = () => {
+    axios.post('http://localhost:5000/students', student)
+  }
+
   return (
+    <>
+    <h2> Create Student</h2>
     <form className={classes.root} noValidate autoComplete="off">
-      <TextField id="outlined-basic" label="Outlined" variant="outlined" />
+      <TextField id="outlined-basic" label="Student Registration No." variant="outlined" value={student.regNo} onChange={(event)=> {
+        setStudent({...student, student, regNo: event.target.value})
+      }} />
+      <TextField id="outlined-basic" label="Full Name" variant="outlined" value={student.studentName} onChange={(event)=> {
+        setStudent({...student, student, StudentName: event.target.value})
+      }} />
+      <TextField id="outlined-basic" label="Grade Score" variant="outlined" value={student.grade}  onChange={(event)=> {
+        setStudent({...student, student, grade: event.target.value})
+      }} />
+      <TextField id="outlined-basic" label="Department" variant="outlined" value={student.section} onChange={(event)=> {
+        setStudent({...student, student, section: event.target.value})
+      }} />
+       
+      <Button variant="contained" color="primary" onClick={createStudent}>
+        Create
+      </Button>
     </form>
+    </>
   );
 }
