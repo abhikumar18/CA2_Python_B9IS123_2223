@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
@@ -7,6 +7,7 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
+import axios from 'axios';
 
 const useStyles = makeStyles({
   table: {
@@ -26,8 +27,17 @@ const rows = [
   createData('Gingerbread', 356, 16.0, 49, 3.9),
 ];
 
-export default function BasicTable() {
+export default function ShowStudent() {
   const classes = useStyles();
+
+  const [studentsList, setStudentList] = useState([])
+
+  useEffect(() => {
+    axios.get('http://localhost:5000/students').then( (allStudents) => {
+      setStudentList(allStudents.data);
+    })
+
+  }, [])
 
   return (
     <>
