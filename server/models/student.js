@@ -8,7 +8,7 @@ const studentSchema = mongoose.Schema({
         type: String,
         default: 'A'
     }
-    
+
 });
 
 const student = mongoose.model('student', studentSchema);
