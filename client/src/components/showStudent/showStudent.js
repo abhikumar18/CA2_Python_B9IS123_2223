@@ -8,6 +8,9 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import axios from 'axios';
+import IconButton from '@material-ui/core/IconButton';
+import DeleteIcon from '@material-ui/icons/Delete';
+
 
 const useStyles = makeStyles({
   table: {
@@ -31,6 +34,13 @@ export default function ShowStudent() {
   const classes = useStyles();
 
   const [studentsList, setStudentList] = useState([])
+  
+
+  const deleteStudent = (id) => {
+    axios.delete(`http://localhost:5000/students/${id}`).then( () => {
+      window.location.reload(false);
+    })
+  }
 
   useEffect(() => {
     axios.get('http://localhost:5000/students').then( (allStudents) => {
@@ -46,23 +56,28 @@ export default function ShowStudent() {
       <Table className={classes.table} aria-label="simple table">
         <TableHead>
           <TableRow>
-            <TableCell>Dessert (100g serving)</TableCell>
-            <TableCell align="right">Calories</TableCell>
-            <TableCell align="right">Fat&nbsp;(g)</TableCell>
-            <TableCell align="right">Carbs&nbsp;(g)</TableCell>
-            <TableCell align="right">Protein&nbsp;(g)</TableCell>
+            <TableCell>Name</TableCell>
+            <TableCell align="right">Registration Number</TableCell>
+            <TableCell align="right">Grade</TableCell>
+            <TableCell align="right">Section</TableCell>
+            <TableCell align="right">Action</TableCell>
+
           </TableRow>
         </TableHead>
         <TableBody>
-          {rows.map((row) => (
-            <TableRow key={row.name}>
+          {studentsList.map((student, key) => (
+            <TableRow key={key}>
               <TableCell component="th" scope="row">
-                {row.name}
+                {student.studentName}
               </TableCell>
-              <TableCell align="right">{row.calories}</TableCell>
-              <TableCell align="right">{row.fat}</TableCell>
-              <TableCell align="right">{row.carbs}</TableCell>
-              <TableCell align="right">{row.protein}</TableCell>
+              <TableCell align="right">{student.regNo}</TableCell>
+              <TableCell align="right">{student.grade}</TableCell>
+              <TableCell align="right">{student.section}</TableCell>
+              <TableCell align="right">
+              <IconButton aria-label="delete" className={classes.margin} onClick={() => deleteStudent(student._id)}>
+              <DeleteIcon fontSize="small" />
+              </IconButton> 
+              </TableCell>
             </TableRow>
           ))}
         </TableBody>

@@ -26,7 +26,9 @@ export default function Create() {
 
   //This function will save the data from front end to backend
   const createStudent = () => {
-    axios.post('http://localhost:5000/students', student)
+    axios.post('http://localhost:5000/students', student).then( () => {
+      window.location.reload(false);
+    })
   }
 
   return (
