@@ -16,6 +16,7 @@ const useStyles = makeStyles((theme) => ({
 export default function Create() {
   const classes = useStyles();
 
+//updates the data of the text field on the front-end
   const [student, setStudent] = useState({
 
     regNo: 0,
@@ -24,7 +25,7 @@ export default function Create() {
     section: ''
   });
 
-  //This function will save the data from front end to backend
+//This function will save the data from front end to backend
   const createStudent = () => {
     axios.post('http://localhost:5000/students', student).then( () => {
       window.location.reload(false);
