@@ -35,13 +35,13 @@ export default function ShowStudent() {
 
   const [studentsList, setStudentList] = useState([])
   
-
+//will delete a data on the backend with the help of axios API
   const deleteStudent = (id) => {
     axios.delete(`http://localhost:5000/students/${id}`).then( () => {
       window.location.reload(false);
     })
   }
-
+//executes whatever inside when the page relodas/refreshed
   useEffect(() => {
     axios.get('http://localhost:5000/students').then( (allStudents) => {
       setStudentList(allStudents.data);

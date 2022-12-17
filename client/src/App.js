@@ -6,6 +6,7 @@ import './App.css';
 import useStyles from './styles';
 
 function App() {
+//to pass paramaeters to make style
   const classes = useStyles();
   return (
     <div className="App">
