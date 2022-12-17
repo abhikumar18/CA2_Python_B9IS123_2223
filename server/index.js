@@ -4,15 +4,18 @@ import mongoose from 'mongoose';
 import cors from 'cors';
 import studentRoutes from './routes/student.js';
 
-//app.use('/students', studentRoutes);
 
 const app = express();
+app.use(cors());
 
 app.use(bodyParser.json({limit:"20mb", extended:true}));
 
 app.use(bodyParser.urlencoded({limit:"20mb", extended:true}));
 
-app.use(cors());
+app.use('/students', studentRoutes);
+
+
+
 
 
 const CONNECTION_URL = 'mongodb+srv://issume:1234@cluster0.02zx9mt.mongodb.net/?retryWrites=true&w=majority';
