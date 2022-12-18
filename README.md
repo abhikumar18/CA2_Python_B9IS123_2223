@@ -26,3 +26,11 @@ Inorder to initialize the host we use "npm start" from the terminal in both the 
 ![CA4](https://user-images.githubusercontent.com/116893742/208264865-8a9fd5b2-b500-4a3e-b213-27fd4de0b95c.JPG)
 
 Our project is a student management system, which allows users to Store, Delete and populate student data. The system has two sections which are the create section which allows end users to create and save student information, and the second section the All Student part (table) which posts student information populated from the MongoDb. The All student section also includes the delete functionality under the action column. By clicking the Delete Icon a user can delete student information. To store a student's information, a user must fill out the form and click the Create Button. To store data, a user must fill in all the fields as required. The Registration number field takes only a number (integer) character. The other fields take only strings. All fields must be filled otherwise will not allow users to save/create the information. The section field is filled with a default "A" if the user didn't fill it. To see the effect the user must refresh the page after the creation of the student information.
+
+Contribution-Isaias-10583631
+I was mainly in the back-end/server development including:
+Creating of Routes GET,POS, DELETE for fetching, updating and deleting data
+Controllers that handle route functionality with the help of Express-JS and Node-JS
+Setting up JSON Schema for MongoDB
+
+
