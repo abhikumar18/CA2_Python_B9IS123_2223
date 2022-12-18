@@ -29,8 +29,8 @@ Our project is a student management system, which allows users to Store, Delete 
 
 Contribution-Isaias-10583631
 I was mainly in the back-end/server development including:
-Creating of Routes GET,POST, DELETE for fetching, updating and deleting data
-Controllers that handle route functionality with the help of Express-JS and Node-JS
-Setting up JSON Schema for MongoDB
+Creating of Routes GET,POST, DELETE for fetching, updating and deleting data,
+Controllers that handle route functionality with the help of Express-JS and Node-JS,
+Setting up JSON Schema for MongoDB.
 
 
