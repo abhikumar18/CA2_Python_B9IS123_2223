@@ -10,3 +10,18 @@ We have used React Js components with Material UI (Javascript front end framewor
 
 <img width="959" alt="image" src="https://user-images.githubusercontent.com/16397860/207579771-1cdc5e93-ed3b-4c11-a734-320cf14b58bb.png">
 
+Contributions
+
+Isaias/10583631
+Mainly in the back-end/server development including: Creating of Routes for POST and DELETE for updating and deleting data, 
+with the help of Express-JS and Node-JS and also created the server on Express-JS.
+
+Sohaib/10625846
+Mainly connection with MongoDB Coonection and creating the basic project set up and file structure for both front end back 
+end and creating of student schema in mongoDB Atlas.
+
+
+Abhishek/10614607
+Mainly Handled on front end side like creating react components using react hooks and styling of react functional components with
+Material UI and use of Axios to display to display student data from API.
+
